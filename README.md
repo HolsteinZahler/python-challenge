@@ -1,6 +1,6 @@
 # python-challenge
 
-Here is a description of two python scripts each called ``main.py`` contained in each of the two folders in this repository.  A description of the first is under the [PyBank](PyBank) heading and the second under [PyPoll](PyPoll).  
+Here is a description of two python scripts each called ``main.py`` contained in the [PyBank](PyBank) and [PyPoll](PyPoll) folders in this repository.  The scripts are described under the correspoinding headings below.
 
 ## PyBank
 
