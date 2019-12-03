@@ -1,5 +1,7 @@
 # python-challenge
 
+Here is a description of two python scripts each called ``main.py`` contained in each of the two folders in this repository.  A description of the first is under the [PyBank](PyBank) heading and the second under [PyPoll](PyPoll).  
+
 ## PyBank
 
 Expects to read a csv file named ``budget_data.csv`` in ``..Resources`` subfolder.  The input file should have the following format.
