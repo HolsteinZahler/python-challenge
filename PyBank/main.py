@@ -20,7 +20,7 @@ with open(csvpath, newline='') as csvfile:
 	# Initialize several variables
 	total_number_of_months=1
 	net_total_amount=0
-	net_change=0
+	
 	greatest_inc=0
 	greatest_dec=0
 	
@@ -29,7 +29,9 @@ with open(csvpath, newline='') as csvfile:
 	csv_first_row=next(csvreader)
 	prev_profit_or_loss=int(csv_first_row[1])
 	net_total_amount+=prev_profit_or_loss
-	
+	# net change will be last month profit/loss minus first month.
+	net_change=-prev_profit_or_loss
+
 	for row in csvreader:
 		total_number_of_months+=1
 		# Get current months Profit/Loss
@@ -38,8 +40,6 @@ with open(csvpath, newline='') as csvfile:
 		row_profit_or_loss_change=cur_profit_or_loss-prev_profit_or_loss
 		# Summ the net amount
 		net_total_amount+=cur_profit_or_loss
-		# Sum the net change to use for average calculation
-		net_change+=row_profit_or_loss_change
 
 		# Check if current month's change is greater or less than all
 		# previous months' changes. 
@@ -51,7 +51,8 @@ with open(csvpath, newline='') as csvfile:
 			greatest_dec_mnth = row[0]
 		# Store the current Profit/Loss as the previous one for the next
 		# row.
-		prev_profit_or_loss=int(row[1])
+		prev_profit_or_loss=cur_profit_or_loss
+net_change+=cur_profit_or_loss
 # Set up file for writing
 output_file=open("results.txt", "w")
 # Print all outputs
